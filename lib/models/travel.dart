@@ -32,7 +32,8 @@ class Travel {
 }
 
 Future<Stream<Travel>> getTravels() async {
-  var url = 'https://hackpreview.hirt.one/api/trips';
+  //var url = 'https://hackpreview.hirt.one/api/trips';
+  var url = 'https://pascalwacker.github.io/starthack-sbb-discover-switzerland-app/mock/trips.json';
 
   var client = new http.Client();
   var streamedRes = await client.send(new http.Request('get', Uri.parse(url)));
@@ -58,7 +59,8 @@ class TravelDay {
 }
 
 Future<Stream<TravelDay>> getTravelDay(Travel travel) async {
-  var url = 'https://hackpreview.hirt.one/api/trips/' + travel.key.toString();
+  //var url = 'https://hackpreview.hirt.one/api/trips/' + travel.key.toString();
+  var url = 'https://pascalwacker.github.io/starthack-sbb-discover-switzerland-app/mock/trips-' + travel.key.toString() + '.json';
 
   var client = new http.Client();
   var streamedRes = await client.send(new http.Request('get', Uri.parse(url)));
@@ -97,7 +99,8 @@ class TravelOption {
 }
 
 Future<Stream<TravelOption>> getTravelOption(city, category) async {
-  var url = 'https://hackpreview.hirt.one/api/points/' + city + '/' + category + '/';
+  //var url = 'https://hackpreview.hirt.one/api/points/' + city + '/' + category + '/';
+  var url = 'https://pascalwacker.github.io/starthack-sbb-discover-switzerland-app/mock/' + city + '-' + category + '.json';
 
   var client = new http.Client();
   var streamedRes = await client.send(new http.Request('get', Uri.parse(url)));
